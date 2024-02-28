@@ -1,0 +1,32 @@
+import html
+from bs4 import BeautifulSoup
+import requests
+
+url = "https://www.flipkart.com/cameras/dslr-mirrorless/pr?sid=jek%2Cp31%2Ctrv&p%5B%5D=facets.fulfilled_by%255B%255D%3DFlipkart%2BAssured&p%5B%5D=facets.type%255B%255D%3DMirrorless&param=179&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJTaG9wIE5vdyEiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJUb3AgTWlycm9ybGVzcyBDYW1lcmFzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwiaGVyb1BpZCI6eyJzaW5nbGVWYWx1ZUF0dHJpYnV0ZSI6eyJrZXkiOiJoZXJvUGlkIiwiaW5mZXJlbmNlVHlwZSI6IlBJRCIsInZhbHVlIjoiRExMRkRKOURGWFZBWkRUUyIsInZhbHVlVHlwZSI6IlNJTkdMRV9WQUxVRUQifX19fX0%3D&fm=neo%2Fmerchandising&iid=M_26648bfc-f850-4b4e-8090-8c8844015bd3_1.Q5LU1U8PHMK6&ppt=hp&ppn=homepage&ssid=ul652c3ihc0000001700836034214&otracker=dynamic_omu_infinite_Best%2Bof%2BElectronics_1_1.dealCard.OMU_INFINITE_Q5LU1U8PHMK6&cid=Q5LU1U8PHMK6"
+response = requests.get(url)
+#print(response.status_code)
+print(response.content)
+
+htmlcontent = response.content
+
+soup = BeautifulSoup(htmlcontent, 'html.parser')
+#print(soup.prettify())
+
+#print(soup.title)
+#print(soup.title.name)
+#print(soup.title.string)
+#print(soup.title.parent.names)
+#print(soup.p)
+#print(soup.a)
+#print(soup.find_all('a'))
+#print(soup.find('a'))
+#print(soup.find_all(id="next-page-link-tag"))
+
+#for link in soup.find_all('a'):
+    #print(link.get('href'))
+
+#for image in soup.find_all('img'):
+    #print(image.get('src'))
+
+#product = soup.find_all('div', class_=_'3wLduG')
+#print(product)
